@@ -10,9 +10,7 @@ const Ncard = ({ item ,isTabletOrMobile}) => {
        <div style={{width:'90%',padding:20}}>
         <img 
         style={{objectFit:'cover',height:'100%',width:'100%'}}
-        src={
-          process.env.REACT_APP_UPLOAD_URL +    item.attributes?.img?.data?.attributes?.url
-              }
+        src={item.attributes?.img?.data?.attributes?.url}
               alt=""
               className="mainImg"
             />
@@ -25,9 +23,7 @@ const Ncard = ({ item ,isTabletOrMobile}) => {
     <Link className="link" to={`/product/${item.id}`}>
       <div className="card">
         <div className="imagee">
-          <img src={
-     process.env.REACT_APP_UPLOAD_URL + item.attributes?.img?.data?.attributes?.url
-            }
+          <img src={item?.attributes?.img?.data?.attributes?.url}
             alt=""
             className="mainImg"
           />

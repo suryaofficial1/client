@@ -10,14 +10,14 @@ const Card = ({ item }) => {
         <div className="image">
           {item?.attributes.isNew && <span>New Season</span>}
           <img src={
-              process.env.REACT_APP_UPLOAD_URL + item.attributes?.img?.data?.attributes?.url
+              item.attributes?.img?.data?.attributes?.url
             }
             alt=""
             className="mainImg"
           />
           <img
             src={
-              process.env.REACT_APP_UPLOAD_URL + item.attributes?.im2?.data?.attributes?.url
+              item.attributes?.im2?.data?.attributes?.url
             }
             alt=""
             className="secondImg"

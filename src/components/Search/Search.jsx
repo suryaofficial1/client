@@ -53,9 +53,7 @@ const Search = ({ setSearchModal }) => {
                         >
                             <div className="image-container">
                                 <img
-                                    src={
-                                        process.env.REACT_APP_UPLOAD_URL + item.attributes.image.data[0].attributes.url
-                                    }
+                                    src={item.attributes.image.data[0].attributes.url}
                                 />
                             </div>
                             <div className="prod-details">

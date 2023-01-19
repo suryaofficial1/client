@@ -48,7 +48,7 @@ const AllProducts = ({ type }) => {
           ? "Something went wrong!"
           : loading
           ? "loading"
-          : data?.map((item) => <Card item={item} key={item.id} />)}
+          : data?.length > 0 ? data?.map((item) => <Card item={item} key={item.id} />):''}
       </div>
     </div>
   );

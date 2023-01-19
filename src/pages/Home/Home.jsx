@@ -9,6 +9,7 @@ import Heading from './Heading/Heading'
 // import Example from './Slider3D/Example'
 import Imagegallery from './ImageGallery/Imagegallery'
 import "./Home.scss"
+// import DynamicSlider from './Slider3D/DynamicSlider'
 
 const Home = () => {
   return (
@@ -20,7 +21,8 @@ const Home = () => {
       {/* <FeaturedProducts type="trending"/> */}
       <Shoeslide />
       <TrendingSlide/>
-      {/* <Example/> */}
+  {/* <Example/>  */}
+  {/* <DynamicSlider /> */}
       {/* <Contact/> */}
       <Imagegallery />
     </div>

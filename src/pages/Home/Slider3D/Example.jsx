@@ -20,6 +20,7 @@ export default class Example extends Component {
     showNavigation: true,
     config: config.gentle
   };
+  
 
   slides = [
     {
@@ -29,6 +30,14 @@ export default class Example extends Component {
     {
       key: uuidv4(),
       content: <img src={slide2} alt="2" />
+    },
+    {
+      key: uuidv4(),
+      content: <img src={slide3} alt="3" />
+    },
+    {
+      key: uuidv4(),
+      content: <img src={slide3} alt="3" />
     },
     {
       key: uuidv4(),
@@ -52,8 +61,9 @@ export default class Example extends Component {
           slides={this.slides}
           offsetRadius={this.state.offsetRadius}
           showNavigation='true'
-          animationConfig={this.state.config}
-        />
+          animationConfig={this.state.config}>
+          </Carousel>
+      
       
       </div>
     );
