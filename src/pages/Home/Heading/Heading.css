@@ -1,0 +1,16 @@
+.heading-container {
+    width: 100%;
+    text-align: center;
+    padding-top: 90px;
+    padding-bottom: 110px;
+  }
+  
+  .heading-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    @media (max-width: 600px) {
+      font-size: 2rem;
+    }
+  }
+  
