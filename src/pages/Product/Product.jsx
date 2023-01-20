@@ -13,13 +13,14 @@ const Product = () => {
   const [selectedImg, setSelectedImg] = useState("img");
   const [selectedSize, setSelectedSize] = useState();
   const [quantity, setQuantity] = useState(1);
-  
+
   const dispatch = useDispatch();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
-  console.log("-----All Data-----",data)
-  useEffect(()=>{
-    console.log(data,error)
-  },[data,error])
+
+  useEffect(() => {
+    console.log(data, error)
+  }, [data, error])
+  
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 500px)" });
   const renderForMobile = () => (
     <div className="left" style={{ flexDirection: "column" }}>
@@ -90,15 +91,15 @@ const Product = () => {
               <select
                 id="size"
                 value={selectedSize}
-                onChange={(e)=>setSelectedSize(e.target.value)}
+                onChange={(e) => setSelectedSize(e.target.value)}
               >
-                
+
                 <option value="">Select a size</option>
-                {data?.length>0  ? Object.keys(data?.attributes?.Size?.size).map((size) => (
+                {data?.length > 0 ? Object.keys(data?.attributes?.Size?.size).map((size) => (
                   <option key={size} value={size}>
                     {size}
                   </option>
-                )):null}
+                )) : null}
               </select>
             </div>
 

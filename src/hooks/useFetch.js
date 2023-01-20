@@ -7,20 +7,24 @@ const useFetch = (url) => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const res = await makeRequest.get(url);
-        setData(res.data?.data);
-      } catch (err) {
-        setError(true);
-      }
-      setLoading(false);
-    };
     fetchData();
   }, [url]);
-
-  return { data,loading, error };
+  
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      await makeRequest.get(url).then((_res) => {
+        if (_res.status === 200) {
+          setLoading(false);
+          setData(_res.data.data);
+        }
+      })
+    } catch (err) {
+      setError(true);
+    }
+    setLoading(false);
+  };
+  return { data, loading, error };
 };
 
 export default useFetch;
