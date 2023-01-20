@@ -20,27 +20,11 @@ const Product = () => {
   useEffect(() => {
     console.log(data, error)
   }, [data, error])
-  
+
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 500px)" });
   const renderForMobile = () => (
-    <div className="left" style={{ flexDirection: "column" }}>
-      <div
-        className="flex"
-        style={{ flexDirection: "row", justifyContent: "space-evenly" }}
-      >
-        <img
-          className="img-mob"
-          src={data?.attributes?.img?.data?.attributes?.url}
-          alt="product-image"
-          onClick={(e) => setSelectedImg("img")}
-        />
-        <img
-          className="img-mob"
-          src={data?.attributes?.img2?.data?.attributes?.url}
-          alt=""
-          onClick={(e) => setSelectedImg("img2")}
-        />
-      </div>
+   
+   <div className="left" style={{ flexDirection: "column" }}>
       <div className="container-main-img">
         <div className="main-img-mob">
           <img
@@ -49,6 +33,33 @@ const Product = () => {
           />
         </div>
       </div>
+      <center>
+      <div
+        className="flex"
+        style={{ flexDirection: "row", justifyContent: "space-evenly" }}
+      >
+        <div>
+        <img
+          className="img-mob"
+          src={data?.attributes?.img?.data?.attributes?.url}
+          alt="product-image"
+          onClick={(e) => setSelectedImg("img")}
+        />
+        </div>
+        <div>
+        <img
+          className="img-mob"
+          src={data?.attributes?.img2?.data?.attributes?.url}
+          alt=""
+          onClick={(e) => setSelectedImg("img2")}
+        />
+        </div>
+     
+        
+        
+      </div>
+      </center>
+      
     </div>
   );
   const renderForDesktop = () => (

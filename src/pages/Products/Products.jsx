@@ -1,11 +1,20 @@
-import React from "react";
-import { useState } from "react";
+import { Divider, FormControlLabel, Grid, Hidden, Radio, RadioGroup, Typography } from "@mui/material";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import List from "../../components/List/List";
 import useFetch from "../../hooks/useFetch";
 import "./Products.scss";
 
-const Products = () => {
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
+
+
+const Products = (props) => {
   const catId = parseInt(useParams().id);
   const [maxPrice, setMaxPrice] = useState(1000);
   const [sort, setSort] = useState(null);
@@ -14,7 +23,6 @@ const Products = () => {
   const { data, loading, error } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${catId}`
   );
-  // console.log(data)
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -27,69 +35,92 @@ const Products = () => {
     );
   };
 
-  return (
-    <div className="products">
-      <div className="left">
-        <div className="filterItem">
-          <h2>Product Categories</h2>
-          {data?.map((item) => (
-            <div className="inputItem" key={item.id}>
-              <input
-                type="checkbox"
-                id={item.id}
-                value={item.id}
-                onChange={handleChange}
-              />
-              <label htmlFor={item.id}>{item.attributes.title}</label>
-            </div>
-          ))}
-        </div>
-        <div className="filterItem">
-          <h2>Filter by price</h2>
-          <div className="inputItem">
-            <span>0</span>
-            <input
-              type="range"
-              min={0}
-              max={1000}
-              onChange={(e) => setMaxPrice(e.target.value)}
-            />
-            <span>{maxPrice}</span>
-          </div>
-        </div>
-        <div className="filterItem">
-          <h2>Sort by</h2>
-          <div className="inputItem">
-            <input
-              type="radio"
-              id="asc"
-              value="asc"
-              name="price"
-              onChange={(e) => setSort("asc")}
-            />
-            <label htmlFor="asc">Price (Lowest first)</label>
-          </div>
-          <div className="inputItem">
-            <input
-              type="radio"
-              id="desc"
-              value="desc"
-              name="price"
-              onChange={(e) => setSort("desc")}
-            />
-            <label htmlFor="desc">Price (Highest first)</label>
-          </div>
-        </div>
-      </div>
-      <div className="right">
-        {/* <img
-          className="catImg"
-          src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt=""
-        /> */}
-        <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats}/>
-      </div>
-    </div>
+  const filters = () => {
+    return <Grid container style={{ border: "2px solid black", padding: 10 }}>
+      <Grid item xs={12}>
+        <Typography variant="h4" gutterBottom> Filter</Typography>
+      </Grid>
+       <Divider />
+       <br></br>
+      <Grid item xs={12}>
+        <Typography variant="h5">Product Categories</Typography>
+      </Grid>
+      <Grid item sm={12}>
+        {data && data?.map((item) => (<><input
+          type="checkbox"
+          id={item.id}
+          value={item.id}
+          onChange={handleChange}
+        />
+          <label htmlFor={item.id}>{item?.attributes?.title}</label>
+        </>
+        ))}
+      </Grid>
+       <Divider />
+      <Grid item sm={12}>
+        <Typography variant="h5">Filter by price</Typography>
+      </Grid>
+      <Grid item sm={12}>
+        <div style={{ padding: 3, width: "40%", height: 30, background: "#f1f3f6", boxShadow: "hwb(0deg 80% 13%) 0px 2px 4px 0px", borderRadius: "4%", marginBottom: -5, marginTop: 10 }}><center>$0</center></div>
+        <input
+          type="range"
+          min={0}
+          max={1000}
+          onChange={(e) => setMaxPrice(e.target.value)}
+        />
+        <div style={{ padding: 3, width: "40%", height: 30, background: "#f1f3f6", boxShadow: "0 2px 4px 0 hsl(0deg 0% 100% / 50%)", borderRadius: "4%", marginTop: -13 }}><center>${maxPrice}</center></div>
+      </Grid>
+       <Divider />
+      <Grid item sm={12}>
+        <Typography variant="h5">Sort by</Typography>
+      </Grid>
+      <Grid item sm={12}>
+        {/* <input
+          type="radio"
+          id="asc"
+          value="asc"
+          name="price"
+          onChange={(e) => setSort("asc")}
+        />
+        <label htmlFor="asc">Price (Lowest first)</label> */}
+        <RadioGroup
+          aria-labelledby="demo-radio-buttons-group-label"
+          defaultValue="none"
+          name="radio-buttons-group"
+        >
+          <FormControlLabel value="asc" control={<Radio onChange={(e) => setSort("asc")} />} label="Price (Lowest first)" />
+          <FormControlLabel value="desc" control={<Radio onChange={(e) => setSort("desc")} />} label="Price (Highest first)" />
+        </RadioGroup>
+      </Grid>
+      <Grid item sm={12}>
+        <Typography variant="h5"> <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats} /></Typography>
+      </Grid>
+    </Grid>
+  }
+
+  return (<>
+      <Hidden only="xs">
+        {filters()}
+      </Hidden>
+      <Hidden smUp>
+        <Dialog
+          open={props.open}
+          keepMounted
+          onClose={props.handleClose}
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle>Filter</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-slide-description">
+              {filters()}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={props.handleClose}>Apply</Button>
+          </DialogActions>
+        </Dialog>
+      </Hidden >
+      </>
   );
 };
 
