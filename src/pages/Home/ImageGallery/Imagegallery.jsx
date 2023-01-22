@@ -13,8 +13,8 @@ import './Imagegallery.css';
 
 const Imagegallery = ()=>{
 
-    return(
-        <div className='container'>
+    return(<center>
+        <div  style={{marginTop: 45,width: "80%",borderRadius: 5,padding: 20}}>
             <div className="row">
                 
                 {/* <div className="s-container"> */}
@@ -64,6 +64,7 @@ const Imagegallery = ()=>{
 
             </div>
         </div>
+        </center>
     );
 }
 

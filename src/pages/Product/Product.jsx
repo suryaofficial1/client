@@ -18,7 +18,6 @@ const Product = () => {
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
 
   useEffect(() => {
-    console.log(data, error)
   }, [data, error])
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 500px)" });
@@ -93,12 +92,12 @@ const Product = () => {
           <div className="left">
             {isTabletOrMobile ? renderForMobile() : renderForDesktop()}
           </div>
-          <div className="right">
+          <div className="right" style={{padding: 70}}>
             <h1>{data?.attributes?.title}</h1>
             <span className="price">${data?.attributes?.price}</span>
 
             <div>
-              <label htmlFor="size">Select Size</label>
+              <label htmlFor="size" style={{marginRight: 10}}>Select Size</label >
               <select
                 id="size"
                 value={selectedSize}

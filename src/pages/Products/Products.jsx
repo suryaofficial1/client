@@ -1,4 +1,4 @@
-import { Divider, FormControlLabel, Grid, Hidden, Radio, RadioGroup, Typography } from "@mui/material";
+import { Divider, FormControl, FormControlLabel, Grid, Hidden, Radio, RadioGroup, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import List from "../../components/List/List";
@@ -17,13 +17,17 @@ import DialogTitle from '@mui/material/DialogTitle';
 const Products = (props) => {
   const catId = parseInt(useParams().id);
   const [maxPrice, setMaxPrice] = useState(1000);
-  const [sort, setSort] = useState(null);
+  const [sort, setSort] = useState('');
+  // const [price, setPrice] = useState('');
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
   const { data, loading, error } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${catId}`
   );
 
+const onInputChange =(e)=>{
+  setSort(e.target.value)
+}
   const handleChange = (e) => {
     const value = e.target.value;
     const isChecked = e.target.checked;
@@ -36,7 +40,7 @@ const Products = (props) => {
   };
 
   const filters = () => {
-    return <Grid container style={{ border: "2px solid black", padding: 10 }}>
+    return <Grid container style={{ boxShadow : 5 , padding: 10,boxShadow: "rgb(201 200 205) 9px 1px 1px 1px"}}>
       <Grid item xs={12}>
         <Typography variant="h4" gutterBottom> Filter</Typography>
       </Grid>
@@ -83,17 +87,29 @@ const Products = (props) => {
           onChange={(e) => setSort("asc")}
         />
         <label htmlFor="asc">Price (Lowest first)</label> */}
-        <RadioGroup
+        {/* <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="none"
           name="radio-buttons-group"
         >
-          <FormControlLabel value="asc" control={<Radio onChange={(e) => setSort("asc")} />} label="Price (Lowest first)" />
-          <FormControlLabel value="desc" control={<Radio onChange={(e) => setSort("desc")} />} label="Price (Highest first)" />
-        </RadioGroup>
+          <FormControlLabel value="asc" control={<Radio onClick={(e) => setSort("asc")} />} label="Price (Lowest first)" />
+          <FormControlLabel value="desc" control={<Radio onClick={(e) => setSort("desc")} />} label="Price (Highest first)" />
+        </RadioGroup> */}
+        <FormControl component="fieldset" name="method-of-payment" >
+          <RadioGroup onClick={(e) => {onInputChange(e, 'radio') }} value={sort}>
+
+            <FormControlLabel value="asc" control={<Radio size="small" />} label="Price (Lowest first)" />
+            <FormControlLabel value="desc" control={<Radio size="small" />} label="Price (Highest first)"/>
+          </RadioGroup>
+        </FormControl>
       </Grid>
       <Grid item sm={12}>
         <Typography variant="h5"> <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats} /></Typography>
+      </Grid>
+      <Grid item sm={12} align="right">
+      <Button variant="contained" color="primary"
+       onClick={() => props.applyFilter(sort)}
+       >Apply</Button>
       </Grid>
     </Grid>
   }
@@ -115,9 +131,9 @@ const Products = (props) => {
               {filters()}
             </DialogContentText>
           </DialogContent>
-          <DialogActions>
+          {/* <DialogActions>
             <Button onClick={props.handleClose}>Apply</Button>
-          </DialogActions>
+          </DialogActions> */}
         </Dialog>
       </Hidden >
       </>

@@ -9,7 +9,9 @@ import Heading from './Heading/Heading'
 // import Example from './Slider3D/Example'
 import Imagegallery from './ImageGallery/Imagegallery'
 import "./Home.scss"
-// import DynamicSlider from './Slider3D/DynamicSlider'
+import Newslider from './Slider3D/Newslider'
+import { Hidden } from '@mui/material'
+import DynamicSlider from './Slider3D/DynamicSlider'
 
 const Home = () => {
   return (
@@ -22,7 +24,15 @@ const Home = () => {
       <Shoeslide />
       <TrendingSlide/>
   {/* <Example/>  */}
-  {/* <DynamicSlider /> */}
+  
+      <Hidden only="xs">
+        <Newslider />
+      </Hidden>
+      <Hidden smUp>
+        <DynamicSlider />
+      </Hidden>
+
+   {/* <DynamicSlider />  */}
       {/* <Contact/> */}
       <Imagegallery />
     </div>
