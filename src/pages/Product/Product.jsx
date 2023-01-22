@@ -92,7 +92,7 @@ const Product = () => {
           <div className="left">
             {isTabletOrMobile ? renderForMobile() : renderForDesktop()}
           </div>
-          <div className="right" style={{padding: 70}}>
+          <div className="right" style={{paddingRight: 70,paddingBottom: 70, paddingLeft:70 }}>
             <h1>{data?.attributes?.title}</h1>
             <span className="price">${data?.attributes?.price}</span>
 

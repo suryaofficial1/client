@@ -44,12 +44,10 @@ const onInputChange =(e)=>{
       <Grid item xs={12}>
         <Typography variant="h4" gutterBottom> Filter</Typography>
       </Grid>
-       <Divider />
-       <br></br>
-      <Grid item xs={12}>
+      <Grid item xs={12}> <Divider light style={{marginTop : 10}}/>
         <Typography variant="h5">Product Categories</Typography>
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         {data && data?.map((item) => (<><input
           type="checkbox"
           id={item.id}
@@ -60,11 +58,10 @@ const onInputChange =(e)=>{
         </>
         ))}
       </Grid>
-       <Divider />
-      <Grid item sm={12}>
+      <Grid item xs={12}> <Divider light style={{marginTop : 10}}/>
         <Typography variant="h5">Filter by price</Typography>
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <div style={{ padding: 3, width: "40%", height: 30, background: "#f1f3f6", boxShadow: "hwb(0deg 80% 13%) 0px 2px 4px 0px", borderRadius: "4%", marginBottom: -5, marginTop: 10 }}><center>$0</center></div>
         <input
           type="range"
@@ -74,11 +71,11 @@ const onInputChange =(e)=>{
         />
         <div style={{ padding: 3, width: "40%", height: 30, background: "#f1f3f6", boxShadow: "0 2px 4px 0 hsl(0deg 0% 100% / 50%)", borderRadius: "4%", marginTop: -13 }}><center>${maxPrice}</center></div>
       </Grid>
-       <Divider />
-      <Grid item sm={12}>
-        <Typography variant="h5">Sort by</Typography>
+      
+      <Grid item xs={12}><Divider light style={{marginTop : 10}}/>
+        <Typography gutterBottom variant="h5">Sort by</Typography>
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         {/* <input
           type="radio"
           id="asc"

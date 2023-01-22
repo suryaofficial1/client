@@ -68,6 +68,7 @@
 .navbar-mobile {
   // height: 60px;
   position: relative;
+  margin-bottom: 30px;
 }
 
 // .logo {
@@ -115,9 +116,9 @@
   }
 
   .menu-icon {
-    margin-left:40px;
     display: block;
     cursor: pointer;
+    float: right;
   }
 
   .nav-elements {

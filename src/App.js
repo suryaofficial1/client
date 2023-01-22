@@ -17,6 +17,7 @@ import Terms from './pages/Terms&Cond/Terms'
 import Privacy from "./pages/PrivacyPolicy/Privacy";
 import Return from "./pages/ReturnPolicy/Return";
 import Shipping from './pages/ShippingPolicy/Shipping'
+import NewFooter from "./components/Footer/NewFooter";
 
 const Layout = () => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 500px)' })
@@ -25,7 +26,8 @@ const Layout = () => {
 
       {isTabletOrMobile?(<NavbarMobile/>):(<Nav />)}
       <Outlet />
-      {isTabletOrMobile?(<FooterMobile/>):(<Footer/>)}
+      {/* {isTabletOrMobile?(<FooterMobile/>):(<Footer/>)} */}
+      {isTabletOrMobile?(<FooterMobile/>):(<NewFooter/>)}
     </div>
   );
 };

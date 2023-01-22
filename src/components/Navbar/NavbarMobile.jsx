@@ -15,16 +15,12 @@ const NavbarMobile = () => {
   return (
     <nav className="navbar-mobile">
       <div className="container">
-       
         {/* <Link className ="linkk" to="/">Amrit Dawani</Link> */}
         <Link to="/">
           <div className='logo-container'> 
             <img className='linkk' src={Logo} alt='Logo' /> 
           </div>
         </Link>
-
-
-       
         <div className="menu-icon" onClick={handleShowNavbar}>
           <Hamburger />
         </div>
