@@ -26,8 +26,8 @@ const Shoeslide = () => {
         <div className="top" style={{ textAlign: "center" }}>
           {/* <h1 style={{ paddingBottom: "20px" }}>Shoes</h1> */}
           <h1 style={{ paddingBottom: "20px", fontWeight: "600" }}>Shoes</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Quis ipsum.</p>
+          {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Quis ipsum.</p> */}
        
         {/* <div style={{width:"80%"}}>
           <cenetr> */}
@@ -72,8 +72,8 @@ const Shoeslide = () => {
       <div className="top" style={{ textAlign: "center" }}>
         <h1 style={{ paddingBottom: "20px", fontWeight: "700" }}>Shoes</h1>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Quis ipsum.</p>
+        {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Quis ipsum.</p> */}
       </div>
       <Swiper
         modules={[Pagination, Navigation]}

@@ -20,24 +20,29 @@ SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
       );
   return (<>
       <center>
-    <div style={{width: "80%"}}>
-      <Swiper
+    <div style={{width: "80%",marginBottom: 80}}>
+    <div className="top" style={{ textAlign: "center" }}>
+        <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "60px" }}>Must Have</h1>
+
+        {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Quis ipsum suspendisse.</p> */}
+      </div>
+      <Swiper  style={{perspective:1800}}
         navigation={true}
         effect={"coverflow"}
         centeredSlides={true}
-        slidesPerView={5}
+        slidesPerView={4}
         loop={true}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
           depth: 900,
           modifier: 1,
-        //   slideShadows: true
         }}
         // pagination={{
         //   clickable: true
         // }}
-        // className="mySwiper"
+         className="mySwiper"
       >
         
         {error

@@ -94,7 +94,7 @@ const Product = () => {
           </div>
           <div className="right" style={{paddingRight: 70,paddingBottom: 70, paddingLeft:70 }}>
             <h1>{data?.attributes?.title}</h1>
-            <span className="price">${data?.attributes?.price}</span>
+            <span className="price">₹{data?.attributes?.price}</span>
 
             <div>
               <label htmlFor="size" style={{marginRight: 10}}>Select Size</label >

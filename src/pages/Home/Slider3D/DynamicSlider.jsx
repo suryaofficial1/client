@@ -25,7 +25,12 @@ const DynamicSlider = ()=>{
 
     return (
         <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
-            
+             <div className="top" style={{ textAlign: "center" }}>
+        <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "60px" }}>Must Have</h1>
+
+        {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Quis ipsum suspendisse.</p> */}
+      </div>
             <Carousel
                 slides={result}
                 showNavigation='true'

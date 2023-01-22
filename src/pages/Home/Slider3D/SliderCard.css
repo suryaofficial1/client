@@ -86,3 +86,10 @@
     bottom: -20%;
 }
 
+@media only screen and (max-width: 767px) {
+  .slideImages {
+    height:450 !important;
+    width:250 !important;
+    }
+}
+

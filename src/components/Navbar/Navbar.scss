@@ -56,7 +56,7 @@
 }
 
 
-.container {
+.navbar-container {
  
   display: flex;
   width: 100%;
@@ -69,6 +69,7 @@
   // height: 60px;
   position: relative;
   margin-bottom: 30px;
+  margin-top:20px
 }
 
 // .logo {
@@ -76,6 +77,8 @@
 
 .menu-icon {
   display: none;
+  margin-top: -20px;
+  margin-right: 50px;
 }
 
 

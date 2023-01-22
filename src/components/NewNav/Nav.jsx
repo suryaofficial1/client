@@ -18,7 +18,7 @@ const Nav = () => {
     <div className= {css.container}> 
         <Link to="/">
             <div className={css.logo}> 
-                <img src={Logo} alt="Logo" /> 
+                <img src={Logo} alt="Logo" />  
             </div>
         </Link>
         {/* <div className={css.logo}>  */}

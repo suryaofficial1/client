@@ -20,17 +20,21 @@ const Slider = () => {
     setCurrentSlide(currentSlide === 0 ? 2 : (prev) => prev - 1);
   };
   const nextSlide = () => {
-    setCurrentSlide(currentSlide === 5 ? 0 : (prev) => prev + 1);
+    setCurrentSlide(currentSlide === 4 ? 0 : (prev) => prev + 1);
   };
 
   return (
     <div className="slider">
-      <div className="containerSlider" style={{transform:`translateX(-${currentSlide * 80}vw)`}}>
-        <img src={SliderImg1} alt="" />
-        <img src={SliderImg2} alt="" />
-        <img src={SliderImg3} alt="" />
-        <img src={SliderImg4} alt="" />
-        <img src={SliderImg5} alt="" />
+      <div className="containerSlider" style={{transform:`translateX(-${currentSlide * 100}vw)`}}>
+        <div className="SliderImages">
+          <center>
+        <img src={SliderImg1} alt=""   />
+        <img src={SliderImg2} alt=""  />
+        <img src={SliderImg3} alt=""  />
+        <img src={SliderImg4} alt=""  />
+        <img src={SliderImg5} alt=""  />
+        </center>
+        </div>
       </div>
       <div className="icons">
         <div className="icon" onClick={prevSlide}>

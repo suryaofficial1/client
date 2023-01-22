@@ -4,68 +4,53 @@ import img2 from '../../../images/mask-group4@2x.png'
 import img3 from '../../../images/mask-group5@2x.png'
 import img4 from '../../../images/mask-group6@2x.png'
 import img5 from '../../../images/mask-group7@2x.png'
-import img6 from '../../../images/mask-group8@2x.png'
-import img7 from '../../../images/mask-group9@2x.png'
-import img8 from '../../../images/mask-group10@2x.png'
-import img9 from '../../../images/4-3@2x.png'
-
-import './Imagegallery.css';
+import img6 from '../../../images/Img0.6.jpeg'
+import img7 from '../../../images/Img0.7.jpeg'
+import img8 from '../../../images/Img0.8.jpeg'
+import img9 from '../../../images/Img0.9.jpeg'
+import { Grid, Typography } from '@mui/material';
 
 const Imagegallery = ()=>{
-
-    return(<center>
-        <div  style={{marginTop: 45,width: "80%",borderRadius: 5,padding: 20}}>
-            <div className="row">
-                
-                {/* <div className="s-container"> */}
-                <div className="top" style={{ textAlign: "center"}}>
-                <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "60px" }}>Category Fashion</h1>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Quis ipsum suspendisse.</p>
-                </div>
-                <div className='col-md-6 m-p' >
-                    <img src={img1} style={{width: '100%'}} />    
-                </div>
-
-                <div className='col-md-6'>
-
-                    <div className='row'>
-                        <div className='col-md-6' style={{paddingBottom:'5%'}}>
-                            <img src={img2} style={{width: '100%'}} />    
-                        </div>
-                        <div className='col-md-6' style={{paddingBottom:'5%'}}>
-                            <img src={img3} style={{width: '100%'}} />    
-                        </div>
-                        <div className='col-md-6' style={{paddingBottom:'5%'}}>
-                            <img src={img4} style={{width: '100%'}} />    
-                        </div>
-                        <div className='col-md-6' style={{paddingBottom:'5%'}}>
-                            <img src={img5} style={{width: '100%'}} />    
-                        </div>
-                    </div>
-
-                </div>
-
-                <div className='col-md-3 m-p'>
-                    <img src={img6} style={{width: '100%'}} />    
-
-                </div>
-                <div className='col-md-3 m-p'>
-                    <img src={img7} style={{width: '100%'}} />  
-                </div>
-                <div className='col-md-3 m-p'>
-                    <img src={img8} style={{width: '100%'}} />  
-                </div>
-                <div className='col-md-3 m-p'>
-                    <img src={img9} style={{width: '100%'}} />  
-                </div>
-
-
-            </div>
-        </div>
-        </center>
-    );
+    return(
+        <Grid container spacing={2} >
+            <Grid item sm={12}>
+                <Typography gutterBottom align="center" variant="h3" color='inherit'><b>Category Fashion</b></Typography>
+            </Grid>
+            <Grid item container spacing={3}sm={12} style={{padding:50}}>
+                <Grid item sm={12} md={6}>
+                    <img src={img1} style={{ width: '100%' }}></img>
+                </Grid>
+                <Grid container spacing={3} item sm={12} md={6}>
+                    <Grid item sm={12} md={6}>
+                    <img src={img2} style={{width: '100%'}} /> 
+                    </Grid>
+                    <Grid item sm={12} md={6}>
+                    <img src={img3} style={{width: '100%'}} /> 
+                    </Grid>
+                    <Grid item sm={12} md={6}>
+                    <img src={img4} style={{width: '100%'}} />
+                    </Grid>
+                    <Grid item sm={12} md={6}>
+                    <img src={img5} style={{width: '100%'}} />
+                    </Grid>
+                </Grid>
+                <Grid container spacing={3} item sm={12} md={12}>
+                <Grid item sm={12} md={3}>
+                    <img src={img6} style={{width: '100%'}} /> 
+                    </Grid>
+                    <Grid item sm={12} md={3}>
+                    <img src={img7} style={{width: '100%'}} /> 
+                    </Grid>
+                    <Grid item sm={12} md={3}>
+                    <img src={img8} style={{width: '100%'}} />
+                    </Grid>
+                    <Grid item sm={12} md={3}>
+                    <img src={img9} style={{width: '100%'}} />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    )
 }
 
 export default Imagegallery;
