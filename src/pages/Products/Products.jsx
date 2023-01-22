@@ -7,7 +7,6 @@ import "./Products.scss";
 
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -40,7 +39,7 @@ const onInputChange =(e)=>{
   };
 
   const filters = () => {
-    return <Grid container style={{ boxShadow : 5 , padding: 10,boxShadow: "rgb(201 200 205) 9px 1px 1px 1px"}}>
+    return <Grid container style={{ padding: 10,boxShadow: "rgb(201 200 205) 9px 1px 1px 1px"}}>
       <Grid item xs={12}>
         <Typography variant="h4" gutterBottom> Filter</Typography>
       </Grid>

@@ -27,7 +27,7 @@ const Layout = () => {
       {isTabletOrMobile?(<NavbarMobile/>):(<Nav />)}
       <Outlet />
       {/* {isTabletOrMobile?(<FooterMobile/>):(<Footer/>)} */}
-      {isTabletOrMobile?(<FooterMobile/>):(<NewFooter/>)}
+      {(<NewFooter/>)}
     </div>
   );
 };

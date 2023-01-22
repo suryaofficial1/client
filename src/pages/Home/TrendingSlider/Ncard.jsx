@@ -7,7 +7,7 @@ const Ncard = ({ item ,isTabletOrMobile}) => {
     return (
   
       <Link className="link" to={`/product/${item.id}`}>
-       <div style={{width:'90%',padding:20}}>
+       <div style={{width:'90%',padding:40,inlineSize:"fit-content"}}>
         <img 
         style={{objectFit:'cover',height:'100%',width:'100%'}}
         src={item.attributes?.img?.data?.attributes?.url}
@@ -18,7 +18,6 @@ const Ncard = ({ item ,isTabletOrMobile}) => {
         </Link>
   
     )}
-  // console.log(item);
   return (
     <Link className="link" to={`/product/${item.id}`}>
       <div className="card">
@@ -27,19 +26,7 @@ const Ncard = ({ item ,isTabletOrMobile}) => {
             alt=""
             className="mainImg"
           />
-          {/* <img
-            src={
-              process.env.REACT_APP_UPLOAD_URL + item.attributes?.product_images?.data?.attributes?.url
-            }
-            alt=""
-            className="secondImg"
-          /> */}
         </div>
-        {/* <h2>{item?.attributes.title}</h2>
-        <div className="prices">
-          <h3>${item.oldPrice || item?.attributes.price + 20}</h3>
-          <h3>${item?.attributes.price}</h3>
-        </div> */}
       </div>
     </Link>
   );

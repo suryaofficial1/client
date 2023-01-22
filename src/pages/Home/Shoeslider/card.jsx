@@ -7,13 +7,13 @@ const Card = ({ item,isTabletOrMobile }) => {
   return (
 
     <Link className="link" to={`/product/${item.id}`}>
-     <div style={{width:'90%',padding:20}}>
+     <div style={{width:'90%',padding:20,display: "inline-block"}}>
       <img 
       style={{objectFit:'cover',height:'100%',width:'100%'}}
       src={item.attributes?.img?.data?.attributes?.url}
-            alt=""
-            className="mainImg"
-          />
+      alt=""
+      className="mainImg"
+      />
        </div>
       </Link>
 
