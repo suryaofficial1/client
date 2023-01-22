@@ -20,12 +20,12 @@ const Slider = () => {
     setCurrentSlide(currentSlide === 0 ? 2 : (prev) => prev - 1);
   };
   const nextSlide = () => {
-    setCurrentSlide(currentSlide === 4 ? 0 : (prev) => prev + 1);
+    setCurrentSlide(currentSlide === 5 ? 0 : (prev) => prev + 1);
   };
 
   return (
     <div className="slider">
-      <div className="container" style={{transform:`translateX(-${currentSlide * 80}vw)`}}>
+      <div className="containerSlider" style={{transform:`translateX(-${currentSlide * 80}vw)`}}>
         <img src={SliderImg1} alt="" />
         <img src={SliderImg2} alt="" />
         <img src={SliderImg3} alt="" />
