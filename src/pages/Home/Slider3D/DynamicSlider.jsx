@@ -24,7 +24,8 @@ const DynamicSlider = ()=>{
     var result = users.length > 0 ? users?.map(user => ({ key: user.id, content: <img src={user?.attributes?.img?.data?.attributes?.url} alt="1" /> })):'';
 
     return (
-        <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
+         <div style={{ width: "80%", height: "500px", margin: "0px auto 230px auto" }}>
+         {/* <div style={{ width: "80%", height: "500px", marginBottom: 80 }}> */}
              <div className="top" style={{ textAlign: "center" }}>
         <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "60px" }}>Must Have</h1>
 

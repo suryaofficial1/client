@@ -70,9 +70,6 @@ const Shoeslider = () => {
     <div className="s-container">
       <div className="top" style={{ textAlign: "center" }}>
         <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "60px" }}>Trending outfit of the week</h1>
-
-        {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Quis ipsum suspendisse.</p> */}
       </div>
 
       <Swiper

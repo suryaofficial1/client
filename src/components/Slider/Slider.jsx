@@ -36,11 +36,11 @@ const Slider = () => {
         </center>
         </div>
       </div>
-      <div className="icons">
-        <div className="icon" onClick={prevSlide}>
+      <div className="SliderIcons">
+        <div className="SliderIcon" onClick={prevSlide}>
           <WestOutlinedIcon />
         </div>
-        <div className="icon" onClick={nextSlide}>
+        <div className="SliderIcon" onClick={nextSlide}>
           <EastOutlinedIcon />
         </div>
       </div>

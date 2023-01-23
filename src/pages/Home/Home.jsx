@@ -17,20 +17,21 @@ const Home = () => {
   return (
     <div className='home'>
       <Heading text="Amrit Dawani"/>
-      <Slider/>
+     
       {/* <FeaturedProducts type="featured"/> */}
       {/* <Categories/> */}
-      {/* <FeaturedProducts type="trending"/> */}
-      <Shoeslide />
-      <TrendingSlide/>
-  {/* <Example/>  */}
-  
       <Hidden only="xs">
         <Newslider />
       </Hidden>
       <Hidden smUp>
         <DynamicSlider />
       </Hidden>
+      <Slider/>
+      <Shoeslide />
+      {/* <FeaturedProducts type="trending"/> */}
+      <TrendingSlide/>
+  {/* <Example/>  */}
+  
 
    {/* <DynamicSlider />  */}
       {/* <Contact/> */}
