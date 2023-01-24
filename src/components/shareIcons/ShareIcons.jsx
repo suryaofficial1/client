@@ -5,7 +5,7 @@ import whatsappIcon from '../../images/whatsappIcon.png'
 const ShareIcons = () => {
     return (
         <div>
-            <a  href="#" target="_blank">
+            <a  href="http://Wa.me/917566904500" target="_blank">
                 <i class="whats-app"><img src={whatsappIcon} class="shareImg"></img></i>
             </a>
         </div>

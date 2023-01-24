@@ -119,7 +119,7 @@ const Product = () => {
             <p>{data?.attributes?.desc}</p>
             <div className="quantity" style={{ paddingLeft:55 }}>
               <button onClick={() =>setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}>-</button>
-              <b> {quantity}</b>
+             <div class="quantityCenter"> <b> {quantity}</b></div>
               <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
             </div>
             <button 
@@ -139,14 +139,14 @@ const Product = () => {
             >
               <AddShoppingCartIcon /> ADD TO CART
             </button>
-            <div className="links"  style={{ paddingLeft:55 }}>
+            {/* <div className="links"  style={{ paddingLeft:55 }}>
               <div className="item">
                 <FavoriteBorderIcon /> ADD TO WISH LIST
-              </div>
+              </div> */}
               {/* <div className="item">
                 <BalanceIcon /> ADD TO COMPARE
               </div> */}
-            </div>
+            {/* </div> */}
             <div className="info" >
               {/* <span>Vendor: Polo</span> */}
               {/* <span>Product Type: T-Shirt</span> */}

@@ -14,7 +14,7 @@ const Imagegallery = ()=>{
     return(
         <Grid container spacing={2} >
             <Grid item sm={12}>
-                <Typography gutterBottom align="center" variant="h3" color='inherit' style={{ padding: '5%' }}><b>Category Fashion</b></Typography>
+                <Typography gutterBottom align="center" variant="h3" color='inherit' style={{ padding: '1%' }}><b>Category Fashion</b></Typography>
             </Grid>
             <Grid item container spacing={3}sm={12} style={{padding:50}}>
                 <Grid item sm={12} md={6}>

@@ -19,7 +19,7 @@ const Products = (props) => {
   const [sort, setSort] = useState('');
   // const [price, setPrice] = useState('');
   const [selectedSubCats, setSelectedSubCats] = useState([]);
-
+console.log("seParams()",useParams())
   const { data, loading, error } = useFetch(
     `/sub-categories?[filters][categories][id][$eq]=${catId}`
   );
@@ -75,22 +75,6 @@ const onInputChange =(e)=>{
         <Typography gutterBottom variant="h5">Sort by</Typography>
       </Grid>
       <Grid item xs={12}>
-        {/* <input
-          type="radio"
-          id="asc"
-          value="asc"
-          name="price"
-          onChange={(e) => setSort("asc")}
-        />
-        <label htmlFor="asc">Price (Lowest first)</label> */}
-        {/* <RadioGroup
-          aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="none"
-          name="radio-buttons-group"
-        >
-          <FormControlLabel value="asc" control={<Radio onClick={(e) => setSort("asc")} />} label="Price (Lowest first)" />
-          <FormControlLabel value="desc" control={<Radio onClick={(e) => setSort("desc")} />} label="Price (Highest first)" />
-        </RadioGroup> */}
         <FormControl component="fieldset" name="method-of-payment" >
           <RadioGroup onClick={(e) => {onInputChange(e, 'radio') }} value={sort}>
 

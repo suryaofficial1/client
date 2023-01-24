@@ -6,6 +6,7 @@ import Products from "../Products/Products";
 import { Button, Grid, Hidden } from "@mui/material";
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { makeRequest } from "../../makeRequest";
+import ShareIcons from "../../components/shareIcons/ShareIcons";
 
 
 const AllProducts = ({ type }) => {
@@ -64,7 +65,7 @@ const AllProducts = ({ type }) => {
         </p> */}
       </div>
       <Grid container spacing={2}>
-
+      <ShareIcons />
         <Hidden smUp>
           <Button variant="outlined" onClick={handleClickOpen}>
             <FilterListIcon />

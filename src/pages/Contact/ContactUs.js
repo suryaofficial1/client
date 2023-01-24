@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './style.scss'
 import {initializeApp} from 'firebase/app';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
+import ShareIcons from '../../components/shareIcons/ShareIcons';
 const firebaseConfig = {
   apiKey: "AIzaSyCKgprn6_Uy87iHc5GCivaaZYUDjTPC8rs",
   authDomain: "amrit-davani.firebaseapp.com",
@@ -84,6 +85,7 @@ export const ContactUs = ()=>{
                     19/1, New Palasia, Indore (M.P.) 452001
             </li>
         </ul>
+        <ShareIcons />
         </div>
     )
 }

@@ -21,13 +21,15 @@ const Home = () => {
      
       {/* <FeaturedProducts type="featured"/> */}
       {/* <Categories/> */}
+      <Slider/>
+
       <Hidden only="xs">
         <Newslider />
       </Hidden>
       <Hidden smUp>
         <DynamicSlider />
       </Hidden>
-      <Slider/>
+      
       <Shoeslide />
       {/* <FeaturedProducts type="trending"/> */}
       <TrendingSlide/>

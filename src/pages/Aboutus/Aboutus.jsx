@@ -2,12 +2,14 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ShareIcons from '../../components/shareIcons/ShareIcons';
 
 
 
 const Aboutus = () => {
   return (
     <Container>
+      <ShareIcons />
       <Row className="justify-content-center">
         <Col xs={15} md={12}>
           <h1 className="text-center font-weight-bold">About Us</h1>

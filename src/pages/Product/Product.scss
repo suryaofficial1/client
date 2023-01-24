@@ -70,7 +70,7 @@
     .quantity{
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 25px;
 
       button{
         width: 50px;
@@ -152,7 +152,13 @@
     padding-left:70;
   }
 }
+.quantityCenter{
+   margin-top:0px !important;
 
+@include md {
+  margin-top:25px !important;
+}
+}
 
 .img-mob{
     height:100px;

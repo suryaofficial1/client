@@ -24,7 +24,7 @@ const Shoeslide = () => {
     return (
       <><div style={{marginTop: "-20%"}}>
         <div className="top" style={{ textAlign: "center" }}>
-          <h1 style={{ paddingBottom: "20px", fontWeight: "600" }}>New Arrival</h1>
+          <h1 style={{ paddingBottom: "20px", fontWeight: "600" }}>Shoes</h1>
           {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Quis ipsum.</p> */}
        
@@ -70,7 +70,7 @@ const Shoeslide = () => {
   return (
     <div className="shoe-container">
       <div className="top" style={{ textAlign: "center" }}>
-        <h1 style={{ paddingBottom: "20px", fontWeight: "700" }}>New Arrival</h1>
+        <h1 style={{ paddingBottom: "20px", fontWeight: "700" }}>Shoes</h1>
       </div>
       <Swiper
         modules={[Pagination, Navigation]}
