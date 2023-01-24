@@ -12,11 +12,12 @@ import "./Home.scss"
 import Newslider from './Slider3D/Newslider'
 import { Hidden } from '@mui/material'
 import DynamicSlider from './Slider3D/DynamicSlider'
+import ShareIcons from '../../components/shareIcons/ShareIcons'
 
 const Home = () => {
   return (
     <div className='home'>
-      <Heading text="Amrit Dawani"/>
+      {/* <Heading text="Amrit Dawani"/> */}
      
       {/* <FeaturedProducts type="featured"/> */}
       {/* <Categories/> */}
@@ -36,6 +37,7 @@ const Home = () => {
    {/* <DynamicSlider />  */}
       {/* <Contact/> */}
       <Imagegallery />
+      <ShareIcons />
     </div>
   )
 }

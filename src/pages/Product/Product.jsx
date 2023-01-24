@@ -1,9 +1,11 @@
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { useParams } from "react-router-dom";
+import ShareIcons from "../../components/shareIcons/ShareIcons";
 import useFetch from "../../hooks/useFetch";
 import { addToCart } from "../../redux/cartReducer";
 import "./Product.scss";
@@ -92,8 +94,9 @@ const Product = () => {
           <div className="left">
             {isTabletOrMobile ? renderForMobile() : renderForDesktop()}
           </div>
-          <div className="right" style={{paddingRight: 70,paddingBottom: 70, paddingLeft:70 }}>
-            <h1>{data?.attributes?.title}</h1>
+          <div className="right" style={{ paddingLeft:55 }}>
+            {/* <h1 class="productTitle">{data?.attributes?.title}</h1> */}
+            <Typography gutterBottom align="center" class="productTitle" color='inherit' >{data?.attributes?.title}</Typography>
             <span className="price">₹{data?.attributes?.price}</span>
 
             <div>
@@ -105,7 +108,7 @@ const Product = () => {
               >
 
                 <option value="">Select a size</option>
-                {data?.length > 0 ? Object.keys(data?.attributes?.Size?.size).map((size) => (
+                {data && data?.length > 0 ? Object.keys(data?.attributes?.Size?.size).map((size) => (
                   <option key={size} value={size}>
                     {size}
                   </option>
@@ -114,18 +117,12 @@ const Product = () => {
             </div>
 
             <p>{data?.attributes?.desc}</p>
-            <div className="quantity">
-              <button
-                onClick={() =>
-                  setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
-                }
-              >
-                -
-              </button>
-              {quantity}
+            <div className="quantity" style={{ paddingLeft:55 }}>
+              <button onClick={() =>setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}>-</button>
+              <b> {quantity}</b>
               <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
             </div>
-            <button
+            <button 
               className="add"
               onClick={() =>
                 dispatch(
@@ -142,7 +139,7 @@ const Product = () => {
             >
               <AddShoppingCartIcon /> ADD TO CART
             </button>
-            <div className="links">
+            <div className="links"  style={{ paddingLeft:55 }}>
               <div className="item">
                 <FavoriteBorderIcon /> ADD TO WISH LIST
               </div>
@@ -150,20 +147,21 @@ const Product = () => {
                 <BalanceIcon /> ADD TO COMPARE
               </div> */}
             </div>
-            <div className="info">
+            <div className="info" >
               {/* <span>Vendor: Polo</span> */}
-              <span>Product Type: T-Shirt</span>
+              {/* <span>Product Type: T-Shirt</span> */}
               {/* <span>Tag: T-Shirt, Women, Top</span> */}
             </div>
             <hr />
             <div className="info">
-              <span>DESCRIPTION</span>
+              <span>{data?.attributes?.description}</span>
               <hr />
               <span>ADDITIONAL INFORMATION</span>
               <hr />
               <span>FAQ</span>
             </div>
           </div>
+          <ShareIcons />
         </>
       )}
     </div>

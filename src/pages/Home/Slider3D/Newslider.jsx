@@ -22,7 +22,7 @@ SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
       <center>
     <div style={{width: "80%",marginBottom: 80}}>
     <div className="top" style={{ textAlign: "center" }}>
-        <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "60px" }}>Must Have</h1>
+        <h1 style={{ paddingBottom: "50px", fontWeight: "700", paddingTop: "5px" }}>Must Have</h1>
 
         {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Quis ipsum suspendisse.</p> */}

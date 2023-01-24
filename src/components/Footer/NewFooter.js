@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import "./NewFooter.css";
-
+import whatsappIcon from '../../images/whatsappIcon.png'
 const NewFooter = () => {
   return (
     <div className="footerr">
       <div className="footer-ites">
-        <a href="https://instagram.com">Instagram</a>
-        <a href="https://facebook.com">Facebook</a>
+        <a href="https://instagram.com">Instagram <InstagramIcon /></a>
+        {/* <a href="https://instagram.com">Instagram <img src={whatsappIcon} style={{width:"20%"}}/></a> */}
+        <a href="https://facebook.com">Facebook <FacebookIcon /></a>
       </div>
       <div className="footer-itemss">
         <Link to="/shipping-info">Shipping Information</Link>
