@@ -8,9 +8,9 @@ const NewFooter = () => {
   return (
     <div className="footerr">
       <div className="footer-ites">
-        <a href="https://instagram.com">Instagram <InstagramIcon /></a>
+        <a href="https://instagram.com/amritdawani_menswear?igshid=YmMyMTA2M2Y=">Instagram <InstagramIcon /></a>
         {/* <a href="https://instagram.com">Instagram <img src={whatsappIcon} style={{width:"20%"}}/></a> */}
-        <a href="https://facebook.com">Facebook <FacebookIcon /></a>
+        <a href="https://www.facebook.com/profile.php?id=100069901578192&mibextid=ZbWKwL">Facebook <FacebookIcon /></a>
       </div>
       <div className="footer-itemss">
         <Link to="/shipping-info">Shipping Information</Link>

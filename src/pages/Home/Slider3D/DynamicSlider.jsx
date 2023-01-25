@@ -11,7 +11,7 @@ const DynamicSlider = ()=>{
     const [users, setUsers] = useState([]);
 
     const f = async () => {
-        const res = await fetch("https://amrit-dawani.onrender.com/api/products?populate=*");
+        const res = await fetch(`https://amrit-dawani.onrender.com/api/products?populate=*&[filters][categories][id][$eq]=${1}`);
         const json = await res.json();
         setUsers(json.data);
 
@@ -27,7 +27,7 @@ const DynamicSlider = ()=>{
          <div style={{ width: "80%", height: "500px", margin: "0px auto 230px auto" }}>
          {/* <div style={{ width: "80%", height: "500px", marginBottom: 80 }}> */}
              <div className="top" style={{ textAlign: "center" }}>
-        <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "5px" }}>Must Have</h1>
+        <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "45px" }}>Must Have</h1>
 
         {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Quis ipsum suspendisse.</p> */}

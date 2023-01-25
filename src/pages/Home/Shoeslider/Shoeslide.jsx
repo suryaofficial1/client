@@ -15,14 +15,14 @@ import { useMediaQuery } from "react-responsive";
 const Shoeslide = () => {
 
   const { data, loading, error } = useFetch(
-    `/products?populate=*`
+    `/products?populate=*&[filters][categories][id][$eq]=${2}`
   );
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 500px)' })
 
   if (isTabletOrMobile) {
     return (
-      <><div style={{marginTop: "-20%"}}>
+      <><div style={{marginTop: "1%"}}>
         <div className="top" style={{ textAlign: "center" }}>
           <h1 style={{ paddingBottom: "20px", fontWeight: "600" }}>Shoes</h1>
           {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -33,14 +33,13 @@ const Shoeslide = () => {
 
          
         <Swiper
-          modules={[Pagination, Navigation]}
+          modules={[ Navigation]}
           className="mySwiper"
           navigation={true}
           loopFillGroupWithBlank={true}
           slidesPerView={1}
           spaceBetween={40}
           slidesPerGroup={1}
-          pagination={true}
           loop={true}
         >
           {error
@@ -73,14 +72,13 @@ const Shoeslide = () => {
         <h1 style={{ paddingBottom: "20px", fontWeight: "700" }}>Shoes</h1>
       </div>
       <Swiper
-        modules={[Pagination, Navigation]}
+        modules={[ Navigation]}
         className="mySwiper"
         navigation={true}
         loopFillGroupWithBlank={true}
         slidesPerView={5}
         spaceBetween={40}
         slidesPerGroup={1}
-        pagination={true}
         loop={true}
       >
         {error

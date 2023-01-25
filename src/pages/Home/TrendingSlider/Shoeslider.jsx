@@ -17,9 +17,9 @@ import { useMediaQuery } from "react-responsive";
 const Shoeslider = () => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 500px)' })
   const { data, loading, error } = useFetch(
-    `/products?populate=*`
+    `/products?populate=*&[filters][categories][id][$eq]=${1}`
   );
-
+ 
   if (isTabletOrMobile) {
     return (
       <>
@@ -35,14 +35,13 @@ const Shoeslider = () => {
             Quis ipsum suspendisse.</p> */}
         </div>
         <Swiper
-          modules={[Pagination, Navigation]}
+          modules={[ Navigation]}
           className="mySwiper"
           navigation={true}
           loopFillGroupWithBlank={true}
           slidesPerView={1}
           spaceBetween={40}
           slidesPerGroup={1}
-          pagination={true}
           loop={true}
         >
           {error
@@ -52,7 +51,7 @@ const Shoeslider = () => {
               :
               <>
                 {data?.map((item, i) =>
-                  <SwiperSlide>
+                  <SwiperSlide style={{width:370}}>
                     <Card item={item} key={item.id} isTabletOrMobile={isTabletOrMobile} />
                   </SwiperSlide>
                 )}

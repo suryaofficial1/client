@@ -16,13 +16,13 @@ SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
  function Newslider() {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 500px)' })
     const { data, loading, error } = useFetch(
-        `/products?populate=*`
+        `/products?populate=*&[filters][categories][id][$eq]=${1}`
       );
   return (<>
       <center>
     <div style={{width: "80%",marginBottom: 80}}>
     <div className="top" style={{ textAlign: "center" }}>
-        <h1 style={{ paddingBottom: "50px", fontWeight: "700", paddingTop: "5px" }}>Must Have</h1>
+        <h1 style={{ paddingBottom: "50px", fontWeight: "700", paddingTop: "50px" }}>Must Have</h1>
 
         {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Quis ipsum suspendisse.</p> */}

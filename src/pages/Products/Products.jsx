@@ -21,9 +21,8 @@ const Products = (props) => {
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 console.log("seParams()",useParams())
   const { data, loading, error } = useFetch(
-    `/sub-categories?[filters][categories][id][$eq]=${catId}`
+    `/categories?*`
   );
-
 const onInputChange =(e)=>{
   setSort(e.target.value)
 }
