@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Carousel from "react-spring-3d-carousel";
+import "./Styles.css";
+
 
 const DynamicSlider = ()=>{
     // const [users, setUsers] = useState([]);
@@ -27,7 +29,7 @@ const DynamicSlider = ()=>{
          <div style={{ width: "80%", height: "500px", margin: "0px auto 230px auto" }}>
          {/* <div style={{ width: "80%", height: "500px", marginBottom: 80 }}> */}
              <div className="top" style={{ textAlign: "center" }}>
-        <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "45px" }}>Must Have</h1>
+        <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "45px" }} class="mustHaveHeading">Must Have</h1>
 
         {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Quis ipsum suspendisse.</p> */}

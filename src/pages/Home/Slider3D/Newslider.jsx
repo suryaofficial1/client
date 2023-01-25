@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useFetch from "../../../hooks/useFetch";
+import Ncard from "../TrendingSlider/Ncard";
 import SliderCard from "./SliderCard";
 import "./Styles.css";
 
@@ -53,7 +54,8 @@ SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
           <>
             {data?.map((item, i) => 
             <SwiperSlide>
-                <SliderCard item={item} key={item.id} isTabletOrMobile={isTabletOrMobile}/>
+                {/* <SliderCard item={item} key={item.id} isTabletOrMobile={isTabletOrMobile}/> */}
+                <Ncard item={item} key={item.id} isTabletOrMobile={isTabletOrMobile} />
             </SwiperSlide>
             )}
             

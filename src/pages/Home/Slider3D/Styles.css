@@ -103,3 +103,6 @@
     height: 5px;
     border-radius: 5px;
   }
+  .mustHaveHeading{
+    font-size: 25px;
+  }

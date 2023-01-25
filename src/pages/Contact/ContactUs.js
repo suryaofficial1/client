@@ -45,7 +45,7 @@ export const ContactUs = ()=>{
     }
     return (
         <div className='main'>
-            <h1>Contact Us</h1>
+            <h1>Contact</h1>
             <div className="container">
                 <form onSubmit={submit}>
                     <label for="fname">Name</label>
@@ -78,7 +78,7 @@ export const ContactUs = ()=>{
             </li>
             <li className="contact-item">
                 <i className="fas fa-envelope"></i> 
-                <a href="mailto:amrit@davani.com" className="contact-link">contact@amritdawani.com</a>
+                <a href="mailto:amrit@davani.com" className="contact-link">Amritdawaniofficial@gmail.com</a>
             </li>
             <li className="contact-item">
                 <i className="fas fa-map-marker-alt"></i> 

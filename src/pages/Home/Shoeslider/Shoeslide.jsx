@@ -24,7 +24,7 @@ const Shoeslide = () => {
     return (
       <><div style={{marginTop: "1%"}}>
         <div className="top" style={{ textAlign: "center" }}>
-          <h1 style={{ paddingBottom: "20px", fontWeight: "600" }}>Shoes</h1>
+          <h1 style={{ paddingBottom: "20px", fontWeight: "600" }} class="shoesHeading">Shoes</h1>
           {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Quis ipsum.</p> */}
        

@@ -20,13 +20,12 @@ const Ncard = ({ item ,isTabletOrMobile}) => {
     )}
   return (
     <Link className="link" to={`/product/${item.id}`}>
-      <div className="card">
-        <div className="imagee">
-          <img src={item?.attributes?.img?.data?.attributes?.url}
+      <div style={{width:'90%',inlineSize:"fit-content"}}>
+          <img  style={{objectFit:'cover',height:'100%',width:'100%'}}
+          src={item?.attributes?.img?.data?.attributes?.url}
             alt=""
             className="mainImg"
           />
-        </div>
       </div>
     </Link>
   );

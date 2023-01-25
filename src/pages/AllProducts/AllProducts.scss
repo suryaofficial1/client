@@ -1,12 +1,12 @@
 .featuredProducts {
-    margin: 70px 200px;
+    margin: 0px 40px;
     @media (max-width: 600px) {
-      margin: 10px 20px;
+      margin: 10px 30px;
     }
   
     
     .top {
-      display: flex;
+      // display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 50px;
@@ -35,4 +35,19 @@
       max-width: 100%;
     }
   }
-  
+
+  .noFoundHeading{
+    @media (max-width: 600px) {
+      font-size: 22px;
+    }
+  }
+  .noFoundHeading2{
+    @media (max-width: 600px) {
+      font-size: 18px;
+    }
+  }
+  .noFoundImg{
+    @media (max-width: 600px) {
+      width: 70%
+    }
+  }

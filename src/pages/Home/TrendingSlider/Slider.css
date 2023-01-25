@@ -5,7 +5,7 @@
 }
 .s-container .swiper{
     width: 70%;
-    height: 34rem;
+    /* height: 34rem; */
     position: unset;
 }
 
@@ -84,4 +84,7 @@
     width: 40%;
     height: 100%;
     bottom: -20%;
+}
+.trendingHeading{
+  font-size: 25px;
 }

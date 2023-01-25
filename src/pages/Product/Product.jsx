@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import ShareIcons from "../../components/shareIcons/ShareIcons";
 import useFetch from "../../hooks/useFetch";
 import { addToCart } from "../../redux/cartReducer";
+import PopupImageButton from "../Products/PopupImageButton";
 import "./Product.scss";
 
 const Product = () => {
@@ -18,7 +19,7 @@ const Product = () => {
 
   const dispatch = useDispatch();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
-
+  console.log("---------data------",data)
   useEffect(() => {
   }, [data, error])
 
@@ -100,6 +101,7 @@ const Product = () => {
             <span className="price">₹{data?.attributes?.price}</span>
 
             <div>
+             
               <label htmlFor="size" style={{marginRight: 10}}>Select Size</label >
               <select
                 id="size"
@@ -108,12 +110,13 @@ const Product = () => {
               >
 
                 <option value="">Select a size</option>
-                {data && data?.length > 0 ? Object.keys(data?.attributes?.Size?.size).map((size) => (
+                { data != null ? Object.keys(data?.attributes?.Size?.size).map((size) => (
                   <option key={size} value={size}>
                     {size}
                   </option>
-                )) : null}
+                )) :'' }
               </select>
+              <div>  <PopupImageButton /></div>
             </div>
 
             <p>{data?.attributes?.desc}</p>
@@ -155,6 +158,7 @@ const Product = () => {
             <hr />
             <div className="info">
               <span>{data?.attributes?.description}</span>
+              <span>{data?.attributes?.desc}</span>
               <hr />
               <span>ADDITIONAL INFORMATION</span>
               <hr />
