@@ -6,8 +6,9 @@ import { removeItem, resetCart } from "../../redux/cartReducer";
 import { useDispatch } from "react-redux";
 import { makeRequest } from "../../makeRequest";
 import { loadStripe } from "@stripe/stripe-js";
+import CloseIcon from '@material-ui/icons/Close';
 
-const Cart = () => {
+const Cart = (props) => {
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
 
@@ -20,7 +21,7 @@ const Cart = () => {
   };
 
   const stripePromise = loadStripe(
-    "pk_test_51MI5L6SEWCjDaETl6DpboqTHgB0N3TKQoZY8S6B5sJzVD7Uxc1equc0xMUIuYMcewzY6JuurnVOrVvgf8TJYN2iF00pL8naXF7"
+    "pk_live_51MS34lSJRJly6RuZkBLpAIR9Wb3htV5NRF8TDdVbH8XxfzsgpcCdp28XZ3gICUgfCEt09YdqxNuu0XYYLcd16u5w00zCuh3DiU"
   );
   const handlePayment = async () => {
     try {
@@ -38,6 +39,7 @@ const Cart = () => {
   };
   return (
     <div className="cart">
+      <p class="float-right" onClick={props.close}><CloseIcon /></p>
       <h1>Products in your cart</h1>
       {products?.map((item) => (
         <div className="item" key={item.id}>

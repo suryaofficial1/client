@@ -77,8 +77,8 @@
 
 .menu-icon {
   display: none;
-  margin-top: -20px;
-  margin-right: 50px;
+  // margin-top: -20px;
+  margin-right: 15px;
 }
 
 
@@ -99,9 +99,9 @@
 }
 
 @media (max-width: 768px) {
-  .nav-elements ul li:not(:last-child) {
-    margin-right: 30px;
-  }
+  // .nav-elements ul li:not(:last-child) {
+  //   margin-right: 30px;
+  // }
 }
 
 @media (max-width: 600px) {
@@ -128,7 +128,7 @@
     position: absolute;
     right: 0;
     top: 60px;
-    background-color: #fef7e5;
+    background-color: #e1edea;
     width: 0px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease-in;
@@ -136,7 +136,7 @@
   }
 
   .nav-elements.active {
-    width: 270px;
+    width: 100%;
   }
 
   .nav-elements ul {
@@ -148,6 +148,17 @@
     margin-right: unset;
     margin-top: 22px;
   }
+  .menuGroup{
+    width:98%
+  }
+  .menuitem{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 3px 5px;
+  }
+  // .menuGroup li:hover {
+  //   background-color: #000;
+  // }
 }
 
 .linkk{

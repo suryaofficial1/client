@@ -5,6 +5,8 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 import useFetch from "../../../hooks/useFetch";
 import Ncard from "../TrendingSlider/Ncard";
 import SliderCard from "./SliderCard";
@@ -33,6 +35,8 @@ SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
         effect={"coverflow"}
         centeredSlides={true}
         slidesPerView={4}
+        grabCursor={true}
+        //slidesPerView={"auto"}
         loop={true}
         coverflowEffect={{
           rotate: 50,

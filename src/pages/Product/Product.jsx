@@ -25,62 +25,35 @@ const Product = () => {
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 500px)" });
   const renderForMobile = () => (
-   
-   <div className="left" style={{ flexDirection: "column" }}>
+
+    <div className="left" style={{ flexDirection: "column" }}>
       <div className="container-main-img">
         <div className="main-img-mob">
           <img
-            src={data?.attributes[selectedImg]?.data?.attributes?.url}
+            src={selectedImg != "img" ? selectedImg : data?.attributes[selectedImg]?.data?.attributes?.url}
             alt=""
           />
         </div>
       </div>
       <center>
-      <div
-        className="flex"
-        style={{ flexDirection: "row", justifyContent: "space-evenly" }}
-      >
-        <div>
-        <img
-          className="img-mob"
-          src={data?.attributes?.img?.data?.attributes?.url}
-          alt="product-image"
-          onClick={(e) => setSelectedImg("img")}
-        />
+        <div
+          className="flex"
+          style={{ flexDirection: "row", justifyContent: "space-evenly" }}
+        >
+          {data?.attributes?.images?.data?.map((item, index) => { return <img className="img-mob" src={item.attributes.url} alt="" onClick={(e) => setSelectedImg(item.attributes.url)} /> })}
         </div>
-        <div>
-        <img
-          className="img-mob"
-          src={data?.attributes?.img2?.data?.attributes?.url}
-          alt=""
-          onClick={(e) => setSelectedImg("img2")}
-        />
-        </div>
-     
-        
-        
-      </div>
       </center>
-      
+
     </div>
   );
   const renderForDesktop = () => (
     <>
       <div className="images">
-        <img
-          src={data?.attributes?.img?.data?.attributes?.url}
-          alt=""
-          onClick={(e) => setSelectedImg("img")}
-        />
-        <img
-          src={data?.attributes?.img2?.data?.attributes?.url}
-          alt=""
-          onClick={(e) => setSelectedImg("img2")}
-        />
+        {data?.attributes?.images?.data?.map((item, index) => { return <img src={item.attributes.url} alt="" onClick={(e) => setSelectedImg(item.attributes.url)} /> })}
       </div>
       <div className="mainImg">
         <img
-          src={data?.attributes[selectedImg]?.data?.attributes?.url}
+          src={selectedImg != "img" ? selectedImg : data?.attributes[selectedImg]?.data?.attributes?.url}
           alt=""
         />
       </div>
@@ -95,37 +68,36 @@ const Product = () => {
           <div className="left">
             {isTabletOrMobile ? renderForMobile() : renderForDesktop()}
           </div>
-          <div className="right" style={{ paddingLeft:55 }}>
+          <div className="right" style={{ paddingLeft: 55 }}>
             {/* <h1 class="productTitle">{data?.attributes?.title}</h1> */}
             <Typography gutterBottom align="center" class="productTitle" color='inherit' >{data?.attributes?.title}</Typography>
             <span className="price">₹{data?.attributes?.price}</span>
 
             <div>
-             
-              <label htmlFor="size" style={{marginRight: 10}}>Select Size</label >
+
+              <label htmlFor="size" style={{ marginRight: 10 }}>Select Size</label >
               <select
                 id="size"
                 value={selectedSize}
                 onChange={(e) => setSelectedSize(e.target.value)}
               >
-
                 <option value="">Select a size</option>
-                { data != null ? Object.keys(data?.attributes?.Size?.size).map((size) => (
+                {data != null ? Object.keys(data?.attributes?.Size?.size).map((size) => (
                   <option key={size} value={size}>
                     {size}
                   </option>
-                )) :'' }
+                )) : ''}
               </select>
-              <div>  <PopupImageButton /></div>
+              <div> <PopupImageButton data={data}/></div>
             </div>
 
             <p>{data?.attributes?.desc}</p>
-            <div className="quantity" style={{ paddingLeft:55 }}>
-              <button onClick={() =>setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}>-</button>
-             <div class="quantityCenter"> <b> {quantity}</b></div>
+            <div className="quantity" style={{ paddingLeft: 55 }}>
+              <button onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}>-</button>
+              <div class="quantityCenter"> <b> {quantity}</b></div>
               <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
             </div>
-            <button 
+            <button
               className="add"
               onClick={() =>
                 dispatch(
@@ -146,7 +118,7 @@ const Product = () => {
               <div className="item">
                 <FavoriteBorderIcon /> ADD TO WISH LIST
               </div> */}
-              {/* <div className="item">
+            {/* <div className="item">
                 <BalanceIcon /> ADD TO COMPARE
               </div> */}
             {/* </div> */}

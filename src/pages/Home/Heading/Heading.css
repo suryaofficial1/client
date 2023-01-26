@@ -1,11 +1,12 @@
 .heading-container {
     width: 100%;
     text-align: center;
-    padding-top: 90px;
-    padding-bottom: 110px;
+    padding-top: 10px;
+    padding-bottom: 20px;
   }
   
   .heading-text {
+    font-family: Cardo;
     font-size: 3rem;
     font-weight: bold;
     color: black;

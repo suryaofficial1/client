@@ -37,7 +37,7 @@ const Nav = () => {
                         <Link className ="link" to="/about-us">About Us</Link>
                     </li>
                     <li>
-                        <Link className ="link" to="/contact-us">Contact</Link>
+                        <Link className ="link" to="/contact-us">Contact us</Link>
                     </li>
                     <li><SearchIcon onClick={() => setSearchModal(true)} /></li>
                     <li>

@@ -17,7 +17,7 @@ import ShareIcons from '../../components/shareIcons/ShareIcons'
 const Home = () => {
   return (
     <div className='home'>
-      {/* <Heading text="Amrit Dawani"/> */}
+       <Heading text="Amrit Dawani"/> 
      
       {/* <FeaturedProducts type="featured"/> */}
       {/* <Categories/> */}

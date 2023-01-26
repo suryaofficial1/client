@@ -39,7 +39,7 @@ const Navbar = () => {
           </div>  */}
         </div>
         <div className="center">
-          <Link className ="link" to="/">LAMASTORE</Link>
+          {/* <Link className ="link" to="/">LAMASTORE</Link> */}
           {/* <Link to="/"><img src={logo}></img></Link> */}
         </div>
         <div className="right">
@@ -50,7 +50,7 @@ const Navbar = () => {
             <Link className ="link" to="/allproducts">Products</Link>
           </div>
           <div className="item">
-            <Link className ="link" to="/contact-us">Contact</Link>
+            <Link className ="link" to="/contact-us">Contact Us</Link>
           </div>
           <div className="item">
             <Link className ="link" to="/">Stores</Link>

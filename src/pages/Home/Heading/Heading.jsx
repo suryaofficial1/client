@@ -6,7 +6,7 @@ const Heading = ({ text }) => {
   return (
     <div className="heading-container">
       <h1 className="heading-text">{text}</h1>
-      <Link to="/allproducts">
+      {/* <Link to="/allproducts">
             <button style={{
                 border: '3px solid black',
                 alignItems: 'center',
@@ -19,7 +19,7 @@ const Heading = ({ text }) => {
             }}>
                 Shop Now
             </button>
-        </Link>
+        </Link> */}
     </div>
   );
 };

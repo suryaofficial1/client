@@ -47,15 +47,21 @@ import Image from "material-ui-image";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    paddingLeft: theme.spacing(5),
-    paddingRight: theme.spacing(5)
+    paddingLeft: theme.spacing(7),
+    paddingRight: theme.spacing(7)
   },
   image: {
     maxWidth: "100%",
     height: "auto"
   },
+  heading: {
+    paddingBottom: theme.spacing(4),
+    fontFamily: 'Roboto Condensed',
+  },
   text: {
     padding: theme.spacing(2),
+    fontFamily: 'Roboto Condensed',
+    paddingBottom: theme.spacing(4),
     textAlign: 'left',
   }
 }));
@@ -65,6 +71,7 @@ function AboutUs() {
 
   return (
     <div className={classes.root}>
+      <Typography variant="h3" align="center" className={classes.heading}>About Us</Typography>
       <Grid container spacing={6}>
         <Grid item xs={12} sm={6}>
           <Image
@@ -76,6 +83,7 @@ function AboutUs() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <div className={classes.text}>
+            {/* <Typography variant="h3" align="center">About Us</Typography> */}
             <Typography variant="body1">
               Amrit Dawani, an Indore-based fashion designer, specializes in
               couture for women’s and men’s wear. He started his label ‘The Q by
@@ -93,7 +101,8 @@ function AboutUs() {
               for boundless creativity.
             </Typography>
           </div>
-        </Grid>
+  </Grid>
+
       </Grid>
     </div>
   );

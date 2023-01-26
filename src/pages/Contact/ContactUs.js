@@ -3,6 +3,7 @@ import './style.scss'
 import {initializeApp} from 'firebase/app';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import ShareIcons from '../../components/shareIcons/ShareIcons';
+import Location from './Location';
 const firebaseConfig = {
   apiKey: "AIzaSyCKgprn6_Uy87iHc5GCivaaZYUDjTPC8rs",
   authDomain: "amrit-davani.firebaseapp.com",
@@ -71,6 +72,7 @@ export const ContactUs = ()=>{
                  19/1, New Palasia, Indore (M.P.) 452001
             </div> */}
         {/* </div> */}
+        <Location /> 
         <ul className="contact-listt">
             <li className="contact-item">
                 <i className="fas fa-phone"></i>

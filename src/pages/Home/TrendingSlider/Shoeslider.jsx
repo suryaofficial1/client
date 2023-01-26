@@ -7,8 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import useFetch from "../../../hooks/useFetch";
 import Card from "./Ncard";
-
-// import { SliderProducts } from "../../data/products";
 import { useMediaQuery } from "react-responsive";
 import './Slider.css';
 
@@ -30,7 +28,7 @@ const Shoeslider = () => {
               Quis ipsum.</p>
           </div> */}
         <div className="top" style={{ textAlign: "center" }}>
-          <h1  class="trendingHeading" style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "60px" }}>Trending Outfit <br />of the week</h1>
+          <h1  class="trendingHeading" style={{ paddingBottom: "5px", fontWeight: "700", paddingTop: "30px" }}>Trending Outfit <br />of the week</h1>
 
           {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Quis ipsum suspendisse.</p> */}
@@ -67,7 +65,7 @@ const Shoeslider = () => {
 
     <div className="s-container">
       <div className="top" style={{ textAlign: "center" }}>
-        <h1 style={{ paddingBottom: "20px", fontWeight: "700", paddingTop: "60px" }}>Trending outfit of the week</h1>
+        <h1 style={{ paddingBottom: "10px", fontWeight: "700", paddingTop: "40px" }}>Trending outfit of the week</h1>
       </div>
 
       <Swiper

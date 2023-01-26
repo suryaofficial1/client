@@ -7,7 +7,7 @@ const Ncard = ({ item ,isTabletOrMobile}) => {
     return (
   
       <Link className="link" to={`/product/${item.id}`}>
-       <div style={{width:'90%',padding:40,inlineSize:"fit-content"}}>
+       <div class='trendingSlider'>
         <img 
         style={{objectFit:'cover',height:'100%',width:'100%'}}
         src={item.attributes?.img?.data?.attributes?.url}
