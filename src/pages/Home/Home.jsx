@@ -13,6 +13,7 @@ import Newslider from './Slider3D/Newslider'
 import { Hidden } from '@mui/material'
 import DynamicSlider from './Slider3D/DynamicSlider'
 import ShareIcons from '../../components/shareIcons/ShareIcons'
+import NewSliderMobile from './Slider3D/NewSliderMobile'
 
 const Home = () => {
   return (
@@ -27,7 +28,8 @@ const Home = () => {
         <Newslider />
       </Hidden>
       <Hidden smUp>
-        <DynamicSlider />
+        {/* <DynamicSlider /> */}
+        <NewSliderMobile />
       </Hidden>
       
       <Shoeslide />

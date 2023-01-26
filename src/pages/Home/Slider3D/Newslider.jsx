@@ -21,7 +21,7 @@ SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
     const { data, loading, error } = useFetch(
         `/products?populate=*&[filters][categories][id][$eq]=${1}`
       );
-  return (<>
+  return (<> 
       <center>
     <div style={{width: "80%",marginBottom: 80}}>
     <div className="top" style={{ textAlign: "center" }}>
