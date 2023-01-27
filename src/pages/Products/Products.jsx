@@ -22,8 +22,7 @@ const Products = (props) => {
   const { data, loading, error } = useFetch(
     `/categories?*`
   );
-  console.log("---categories-----",maxPrice)
-  const onInputChange = (e) => {
+    const onInputChange = (e) => {
     setSort(e.target.value)
   }
   const onCategoryChange = (e, val) => {
