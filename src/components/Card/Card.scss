@@ -4,7 +4,6 @@
   flex-direction: column;
   gap: 10px;
   margin-bottom: 50px;
-  border: solid 3px goldenrod;
   
 
   .image{
@@ -12,6 +11,8 @@
     height: 400px;
     overflow: hidden;
     position: relative;
+    border: solid 3px goldenrod;
+
 
     &:hover{
       .secondImg{

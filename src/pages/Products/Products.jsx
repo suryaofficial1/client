@@ -86,9 +86,9 @@ const Products = (props) => {
   }
 
   return (<>
-    <Hidden only="xs">
+    {/* <Hidden only="xs"> */}
       {filters()}
-    </Hidden>
+    {/* </Hidden>
     <Hidden smUp>
       <Dialog
         open={props.open}
@@ -101,12 +101,12 @@ const Products = (props) => {
           <DialogContentText id="alert-dialog-slide-description">
             {filters()}
           </DialogContentText>
-        </DialogContent>
+        </DialogContent> */}
         {/* <DialogActions>
             <Button onClick={props.handleClose}>Apply</Button>
           </DialogActions> */}
-      </Dialog>
-    </Hidden >
+      {/* </Dialog>
+    </Hidden > */}
   </>
   );
 };

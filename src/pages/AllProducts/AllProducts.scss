@@ -35,6 +35,10 @@
       max-width: 100%;
     }
   }
+  .FilterText{
+    flex:3;
+    color:gray
+  }
 
   .noFoundHeading{
     @media (max-width: 600px) {

@@ -8,13 +8,15 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { makeRequest } from "../../makeRequest";
 import ShareIcons from "../../components/shareIcons/ShareIcons";
 import NotFound from "./NotFound";
+import Filter from "../../Comman/Filter/Filter";
+import { Typography } from "@material-ui/core";
 
 
 const AllProducts = ({ type }) => {
   const [open, setOpen] = React.useState(false);
   const [data, setData] = React.useState(null);
   const [page, setPage] = React.useState(0);
-  const [filter, setFilter] = React.useState({ sort: '', price:'',category:'',maxPrice:'' });
+  const [filter, setFilter] = React.useState({ sort: '', price: '', category: '', maxPrice: '' });
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(false);
 
@@ -42,14 +44,14 @@ const AllProducts = ({ type }) => {
       return mainUrl + `&sort=price:${filter.sort}&[filters][categories][id]=${filter.category}&[filters][price][$lt]=${filter.maxPrice}`
     }
     else {
-     return mainUrl
+      return mainUrl
     }
   }
-  
-  const fetchAllProduct = async ()=>{
+
+  const fetchAllProduct = async () => {
     try {
       setLoading(true);
-        const url = getUrl(filter)
+      const url = getUrl(filter)
       await makeRequest.get(url).then((_res) => {
         if (_res.status === 200) {
           setLoading(false);
@@ -63,21 +65,19 @@ const AllProducts = ({ type }) => {
     setLoading(false);
   };
 
-   useEffect(()=>{
+  useEffect(() => {
     fetchAllProduct()
- 
-   }, [page, filter]);
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  }, [page, filter]);
+
+  const toggleDrawer = () => {
+    setOpen(!open)
   };
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const applyFilter = (sort,category,maxPrice) => {
-      setFilter({ ...filter, sort: sort,category:category ,maxPrice:maxPrice})
-      setPage(0)
-      setOpen(false);
+
+  const applyFilter = (sort, category, maxPrice) => {
+    setFilter({ ...filter, sort: sort, category: category, maxPrice: maxPrice })
+    setPage(0)
+    setOpen(!open);
   }
   return (
     <div className="featuredProducts">
@@ -92,16 +92,18 @@ const AllProducts = ({ type }) => {
         </p> */}
       </div>
       <Grid container spacing={2}>
-      <ShareIcons />
-        <Hidden smUp>
-          <Button variant="outlined" onClick={handleClickOpen}>
-            <FilterListIcon />
-          </Button>
-        </Hidden>
-        <Grid item md={3}>
-          <Products open={open} applyFilter={applyFilter} handleClose={handleClose} />
+        <Grid item sm={12} > 
+        {/* <Button color="inherit" onClick={toggleDrawer} > */}
+          <Typography className="FilterText" align="right" onClick={toggleDrawer}>  Filter <FilterListIcon /></Typography>
+         
+        {/* </Button> */}
         </Grid>
-        <Grid item md={9}>
+        <Grid item sm={12}>
+          <Filter open={open} applyFilter={applyFilter} toggleDrawer={toggleDrawer} />
+        </Grid>
+        
+
+        <Grid item  md={12}>
           <div className="bottom">
             {error
               ? "Something went wrong!"
@@ -111,6 +113,7 @@ const AllProducts = ({ type }) => {
           </div>
         </Grid>
       </Grid>
+      <ShareIcons />
 
     </div>
   );

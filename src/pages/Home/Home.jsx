@@ -1,46 +1,49 @@
 import React from 'react'
-// import Categories from '../../components/Categories/Categories'
-import Contact from '../../components/Contact/Contact'
-// import FeaturedProducts from '../../components/FeaturedProducts/FeaturedProducts'
-import Slider from '../../components/Slider/Slider'
-import TrendingSlide from './TrendingSlider/Shoeslider'
-import Shoeslide from './Shoeslider/Shoeslide'
-import Heading from './Heading/Heading'
-// import Example from './Slider3D/Example'
-import Imagegallery from './ImageGallery/Imagegallery'
-import "./Home.scss"
-import Newslider from './Slider3D/Newslider'
-import { Hidden } from '@mui/material'
-import DynamicSlider from './Slider3D/DynamicSlider'
+import Appointment from '../../Comman/Appointment/Appointment'
+import BridesWear from '../../Comman/BridesWear/BridesWear'
+import GroomsWear from '../../Comman/GroomsWear/GroomsWear'
+import Shoes from '../../Comman/Shoes/Shoes'
+// import Slider from '../../Comman/Slider/oneSlider/Slider'
+// import MansSlider from '../../Comman/GroomsWear/GroomsWear'
+import Tuxedos from '../../Comman/tuxedos/Tuxedos'
 import ShareIcons from '../../components/shareIcons/ShareIcons'
-import NewSliderMobile from './Slider3D/NewSliderMobile'
+// import Slider from '../../components/Slider/Slider'
+import "./Home.scss"
 
 const Home = () => {
   return (
     <div className='home'>
-       <Heading text="Amrit Dawani"/> 
-     
-      {/* <FeaturedProducts type="featured"/> */}
-      {/* <Categories/> */}
-      <Slider/>
+      {/* Adding heading */}
+      {/* <Heading text="Amrit Dawani" /> */}
+      {/* <NewSlider /> */}
 
-      <Hidden only="xs">
+{/* <NewSlider /> */}
+      {/* <Slider /> */}
+     <div style={{ marginTop: 65}}> <Tuxedos /></div>  
+      <GroomsWear />
+
+      <BridesWear />
+
+      <Shoes />
+
+      <Appointment />
+{/* <Slider /> */}
+
+
+
+    {/* <Slider /> */}
+    {/* <Antd /> */}
+      {/* <HomePageSlider /> */}
+      {/* <Slider /> */}
+      {/* <Hidden only="xs">
         <Newslider />
       </Hidden>
       <Hidden smUp>
-        {/* <DynamicSlider /> */}
         <NewSliderMobile />
       </Hidden>
-      
       <Shoeslide />
-      {/* <FeaturedProducts type="trending"/> */}
-      <TrendingSlide/>
-  {/* <Example/>  */}
-  
-
-   {/* <DynamicSlider />  */}
-      {/* <Contact/> */}
-      <Imagegallery />
+      <TrendingSlide />  */}
+      {/* <Imagegallery /> */}
       <ShareIcons />
     </div>
   )

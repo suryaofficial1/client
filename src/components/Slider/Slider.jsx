@@ -7,6 +7,9 @@ import SliderImg2 from '../../images/SliderImg2.jpg'
 import SliderImg3 from '../../images/SliderImg3.jpg'
 import SliderImg4 from '../../images/SliderImg4.jpg'
 import SliderImg5 from '../../images/SliderImg5.jpg'
+import img1 from '../../images/ALF1051.JPG'
+import img2 from '../../images/ALF1464.JPG'
+import img3 from '../../images/ALF1601.JPG'
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,9 +31,9 @@ const Slider = () => {
       <div className="containerSlider" style={{transform:`translateX(-${currentSlide * 100}vw)`}}>
         <div className="SliderImages">
           <center>
-        <img src={SliderImg1} alt=""   />
+        <img src={img1} alt=""   />
         <img src={SliderImg2} alt=""  />
-        <img src={SliderImg3} alt=""  />
+        <img src={img2} alt=""  />
         <img src={SliderImg4} alt=""  />
         <img src={SliderImg5} alt=""  />
         </center>
